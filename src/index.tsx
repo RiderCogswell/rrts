@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 interface AppProps {
-  color: string;
+  // made color optional
+  color?: string;
 }
 
 class App extends React.Component<AppProps> {
