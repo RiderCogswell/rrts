@@ -4,14 +4,14 @@ import { ActionTypes } from './types';
 
 const url = 'https://jsonplaceholder.typicode.com/todos'
 
-interface Todo {
+export interface Todo {
   id: number;
   title: string;
   completed: boolean;
 }
 
 // interface to describe tyhis action, creating reusability
-interface FetchTodosAction {
+export interface FetchTodosAction {
   type: ActionTypes.fetchTodos;
   payload: Todo[];
 }
