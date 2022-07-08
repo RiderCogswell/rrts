@@ -1,6 +1,7 @@
 import { Todo, FetchTodosAction } from "../actions";
 import { ActionTypes } from "../actions/types";
-                                          
+                                
+// TA'd reducer
 export const  todosReducer = (
   // default value '=[]'
   state: Todo[] = [],
@@ -12,5 +13,5 @@ export const  todosReducer = (
       return action.payload
     default:
       return state;
-  }
-}
+  };
+};
