@@ -6,20 +6,16 @@ interface AppProps {
   color?: string;
 }
 
-interface AppState {
-  counter: number;
-}
-
-
-
-class App extends React.Component<AppProps, AppState> {
+class App extends React.Component<AppProps> {
   // we could also set the state without AppState interface with this syntax below
-  // state = { counter: 0 };
-  constructor(props: AppProps) {
-    super(props);
+  // could also be overrode by changing prop names
+  state = { counter: 0 };
+  // we'll use the easy route and avoid constructors
+  // constructor(props: AppProps) {
+  //   super(props);
 
-    this.state = { counter: 0 };
-  }
+  //   this.state = { counter: 0 };
+  // }
 
   onIncrement = (): void => {
     this.setState({ counter: this.state.counter + 1 })
