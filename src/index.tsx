@@ -13,6 +13,8 @@ interface AppState {
 
 
 class App extends React.Component<AppProps, AppState> {
+  // we could also set the state without AppState interface with this syntax below
+  // state = { counter: 0 };
   constructor(props: AppProps) {
     super(props);
 
