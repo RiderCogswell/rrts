@@ -6,36 +6,41 @@ interface AppProps {
   color?: string;
 }
 
-class App extends React.Component<AppProps> {
-  // we could also set the state without AppState interface with this syntax below
-  // could also be overrode by changing prop names
-  state = { counter: 0 };
-  // we'll use the easy route and avoid constructors
-  // constructor(props: AppProps) {
-  //   super(props);
+// functional component takes in props and outputs a jsx element
+// const App = (props: AppProps): JSX.Element => {
+//   return <div>{props.color}</div>
+// }
 
-  //   this.state = { counter: 0 };
-  // }
+// class App extends React.Component<AppProps> {
+//   // we could also set the state without AppState interface with this syntax below
+//   // could also be overrode by changing prop names
+//   state = { counter: 0 };
+//   // we'll use the easy route and avoid constructors
+//   // constructor(props: AppProps) {
+//   //   super(props);
 
-  onIncrement = (): void => {
-    this.setState({ counter: this.state.counter + 1 })
-  }
-  onDecrement = (): void => {
-    this.setState({ counter: this.state.counter - 1 })
-  }
+//   //   this.state = { counter: 0 };
+//   // }
 
-  render() {
-    return (
-      <div>
-        <button onClick={this.onIncrement}>Increment</button>
-        <button onClick={this.onDecrement}>Decrement</button>
-        {this.state.counter}
-      </div>
-    )
-  }
-}
+//   onIncrement = (): void => {
+//     this.setState({ counter: this.state.counter + 1 })
+//   }
+//   onDecrement = (): void => {
+//     this.setState({ counter: this.state.counter - 1 })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <button onClick={this.onIncrement}>Increment</button>
+//         <button onClick={this.onDecrement}>Decrement</button>
+//         {this.state.counter}
+//       </div>
+//     )
+//   }
+// }
 
 ReactDOM.render(
-  <App />,
+  <App color="red"/>,
   document.querySelector('#root')
 );
