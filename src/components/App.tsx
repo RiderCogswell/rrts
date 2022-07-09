@@ -5,7 +5,8 @@ import { StoreState } from "../reducers";
 
 interface AppProps {
   todo: Todo[];
-  fetchTodos: typeof fetchTodos;
+  // do not do this in pracice, this is a bad idea and is only necessary here because it is not worth it telling typescript what react-thunk is
+  fetchTodos: Function;
   deleteTodo: typeof deleteTodo;
 }
 
