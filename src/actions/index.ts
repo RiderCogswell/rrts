@@ -16,6 +16,11 @@ export interface FetchTodosAction {
   payload: Todo[];
 }
 
+export interface DeleteTodoAction {
+  type: ActionTypes.deleteTodo;
+  payload: number;
+}
+
 // action creater
 export const fetchTodos = () => {
   // grap TA from Redux typedef file
@@ -31,3 +36,10 @@ export const fetchTodos = () => {
     })
   }
 }
+
+export const deleteTodo = (id: number): DeleteTodoAction => {
+  return {
+    type: ActionTypes.deleteTodo,
+    payload: id
+  };
+};
