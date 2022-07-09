@@ -1,18 +1,14 @@
 import { Todo, Action, ActionTypes } from "../actions";
                                 
-// TA'd reducer
-export const  todosReducer = (
-  // default value '=[]'
-  state: Todo[] = [],
-  action: Action
-) => {
-  switch (action.type) {
+// default value '=[]'
+export const  todosReducer = (state: Todo[] = [], action: Action) => {
+  switch (action.type) {  
     case ActionTypes.fetchTodos:
       // return response data
       return action.payload
     case ActionTypes.deleteTodo:
-      // return response data
-      return action.
+      // filter through state by id and return the todos without the one withthe appropriate id
+      return state.filter((todo: Todo) => todo.id !== action.payload);
     default:
       return state;
   };
