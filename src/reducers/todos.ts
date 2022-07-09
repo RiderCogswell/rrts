@@ -1,5 +1,4 @@
-import { Todo, FetchTodosAction } from "../actions";
-import { ActionTypes } from "../actions/types";
+import { Todo, FetchTodosAction, ActionTypes } from "../actions";
                                 
 // TA'd reducer
 export const  todosReducer = (
