@@ -5,8 +5,8 @@ import { StoreState } from "../reducers";
 
 interface AppProps {
   todo: Todo[];
-  fetchTodos(): typeof fetchTodos;
-  deleteTodo(): typeof deleteTodo;
+  fetchTodos: typeof fetchTodos;
+  deleteTodo: typeof deleteTodo;
 }
 
 export class _App extends React.Component<AppProps> {
@@ -14,9 +14,17 @@ export class _App extends React.Component<AppProps> {
     this.props.fetchTodos();
   };
 
+  onTodoClick = (id: number) : void => {
+    this.props.deleteTodo(id);
+  };
+
   renderList(): JSX.Element[] {
     return this.props.todo.map((todo: Todo) => {
-      return <div key={todo.id}>{todo.title}</div>
+      return (
+        <div onClick={() => this.onTodoClick(todo.id)} key={todo.id}>
+          {todo.title}
+        </div>
+      );
     })
   }
 
@@ -36,4 +44,4 @@ const mapStateToProps = ({ todo }: StoreState): { todo: Todo[] } => {
 };
 
 // first parentheses is for configuration, second is for the connected component
-export const App = connect( mapStateToProps, { fetchTodos })(_App)
+export const App = connect( mapStateToProps, { fetchTodos, deleteTodo })(_App)
