@@ -14,7 +14,10 @@ interface AppState {
   fetching: boolean;
 }
 
+// anytime we create a component we should create an interface, even though redux and typescript do not work so well together!
 export class _App extends React.Component<AppProps, AppState> {
+  // or could initialize state without a constructor and interface like this =>
+  // state = { fetching = false }
   constructor(props: AppProps) {
     super(props);
 
